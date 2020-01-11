@@ -8,7 +8,7 @@ Benchpress is a benchmarking library and CLI for js projects.
 yarn add --dev @roomservice/benchpress
 ```
 
-## Usage
+## Library Usage
 
 To test how long a file takes, use `bench`:
 
@@ -37,6 +37,15 @@ describe('my for loop', [0, 10, 100, 1000, 10000], n => {
     }
   });
 });
+```
+
+## CLI Usage
+
+```bash
+benchpress # runs a test
+benchpress compare # runs against the last commit
+benchpress compare <commit_hash> # runs against a specific hash
+benchpress compare master
 ```
 
 Benchpress looks for files with the name `*_bench.(js|ts)` or anything in a `__bench__`.
