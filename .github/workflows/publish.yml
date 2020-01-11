@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  migration:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -28,6 +28,11 @@ jobs:
 
       - name: Bump Version
         run: yarn bump-version
+
+      - name: Setup access token
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Publish
         run: yarn publish --access public
