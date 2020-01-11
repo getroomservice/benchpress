@@ -1,0 +1,35 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  migration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          registry-url: https://registry.npmjs.org/
+
+      - name: Cache node modules
+        uses: actions/cache@preview
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Bump Version
+        run: yarn bump-version
+
+      - name: Publish
+        run: yarn publish --access public
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
