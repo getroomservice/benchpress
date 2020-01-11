@@ -1,5 +1,3 @@
-export default class Math {
-  add(x: number, y: number): number {
-    return x + y;
-  }
-}
+export { bench } from './bench'
+export { describe } from './describe'
+
