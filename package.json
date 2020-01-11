@@ -1,8 +1,36 @@
 {
-  "name": "benchpress",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@roomservice/benchpress",
+  "version": "0.0.0",
   "repository": "git@github.com:getroomservice/benchpress.git",
-  "author": "Flaque <evanjamesconrad@gmail.com>",
-  "license": "MIT"
+  "author": "Flaque <evanjamesconrad@gmail.com>, maxchehab <maxchehab@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "prettier": "prettier \"src/**/*.{js,ts,tsx}\" --check",
+    "format": "prettier \"src/**/*.{js,ts,tsx}\" --write",
+    "prepare": "yarn run build",
+    "bump-version": " auto-upgrade-npm-version",
+    "prepublishOnly": "yarn test && yarn run lint",
+    "preversion": "yarn run lint"
+  },
+  "devDependencies": {
+    "@types/jest": "24.0.14",
+    "@types/node": "12.0.8",
+    "auto-upgrade-npm-version": "1.0.7",
+    "jest": "24.8.0",
+    "prettier": "1.18.2",
+    "ts-jest": "24.0.2",
+    "tslint": "5.17.0",
+    "typescript": "3.5.1"
+  },
+  "dependencies": {
+    "tslib": "1.10.0"
+  }
 }
