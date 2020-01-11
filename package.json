@@ -31,6 +31,8 @@
     "typescript": "3.5.1"
   },
   "dependencies": {
+    "chalk": "^3.0.0",
+    "oclif": "^1.15.2",
     "tslib": "1.10.0"
   }
 }
