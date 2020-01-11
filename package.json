@@ -1,0 +1,8 @@
+{
+  "name": "benchpress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:getroomservice/benchpress.git",
+  "author": "Flaque <evanjamesconrad@gmail.com>",
+  "license": "MIT"
+}
