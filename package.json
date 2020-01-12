@@ -1,6 +1,6 @@
 {
   "name": "@roomservice/benchpress",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "repository": "git@github.com:getroomservice/benchpress.git",
   "author": "Flaque <evanjamesconrad@gmail.com>, maxchehab <maxchehab@gmail.com>",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "prettier": "prettier \"src/**/*.{js,ts,tsx}\" --check",
     "format": "prettier \"src/**/*.{js,ts,tsx}\" --write",
     "prepare": "yarn run build",
-    "bump-version": " auto-upgrade-npm-version",
+    "bump-version": "auto-upgrade-npm-version",
     "prepublishOnly": "yarn test && yarn run lint",
     "preversion": "yarn run lint"
   },
