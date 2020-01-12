@@ -5,14 +5,14 @@ import { run } from './run';
 const args = yargs.command(
   'diff',
   'compare the current benchmark against the most recent commit.',
-  yargs => {
-    yargs.positional('hashOrBranch', {
+  ys => {
+    ys.positional('hashOrBranch', {
       describe: 'commit hash or branch to compare against',
       type: 'string',
     });
   },
-  args => {
-    console.log('args', args);
+  a => {
+    console.log('args', a);
   },
 ).argv;
 

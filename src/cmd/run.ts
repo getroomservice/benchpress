@@ -38,7 +38,7 @@ function runFile(filepath: string) {
 export async function run(path: string) {
   const files = await benchFiles(path);
 
-  for (let file of files) {
+  for (const file of files) {
     await runFile(file);
   }
 }
