@@ -1,4 +1,4 @@
-import chalk = require('chalk');
+import chalk from 'chalk';
 
 /**
  * Works like "describe" in a testing framework,
@@ -7,10 +7,14 @@ import chalk = require('chalk');
  * @param {Array<number>} ns the size of your sample
  * @param {*} fn
  */
-export function describe(label: string, ns: any[], fn: (...args: any[]) => {}) {
+export function describe(
+  label: string,
+  ns: any[],
+  fn: (...args: any[]) => void,
+) {
   console.log('\n' + chalk.underline(label));
 
-  for (let n of ns) {
+  for (const n of ns) {
     fn(n);
   }
 }
