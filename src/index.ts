@@ -1,3 +1,2 @@
-export { bench } from './bench'
-export { describe } from './describe'
-
+export { bench } from './bench';
+export { describe } from './describe';

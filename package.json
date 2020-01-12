@@ -5,9 +5,15 @@
   "author": "Flaque <evanjamesconrad@gmail.com>, maxchehab <maxchehab@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
+  "bin": {
+    "benchpress": "dist/cmd/index.js"
+  },
   "files": [
     "dist/**/*"
   ],
+  "engines": {
+    "node": ">=8.5.0"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "tslint -p tsconfig.json -c tslint.json",
@@ -21,18 +27,29 @@
     "preversion": "yarn run lint"
   },
   "devDependencies": {
+    "@types/command-exists": "^1.2.0",
     "@types/jest": "24.0.14",
+    "@types/mock-fs": "^4.10.0",
     "@types/node": "^13.1.6",
+    "@types/nodegit": "^0.26.0",
+    "@types/yargs": "^15.0.0",
     "auto-upgrade-npm-version": "1.0.7",
     "jest": "24.8.0",
+    "mock-fs": "^4.10.4",
     "prettier": "1.18.2",
     "ts-jest": "24.0.2",
     "tslint": "5.17.0",
     "typescript": "3.5.1"
   },
   "dependencies": {
+    "@types/invariant": "^2.2.31",
     "chalk": "^3.0.0",
+    "command-exists": "^1.2.8",
+    "invariant": "^2.2.4",
+    "nodegit": "^0.26.3",
     "oclif": "^1.15.2",
-    "tslib": "1.10.0"
+    "ts-node": "^8.6.1",
+    "tslib": "1.10.0",
+    "yargs": "^15.1.0"
   }
 }
