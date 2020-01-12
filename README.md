@@ -43,9 +43,14 @@ describe('my for loop', [0, 10, 100, 1000, 10000], n => {
 
 ```bash
 benchpress # runs a test
+```
+
+Benchpress looks for files with the name `*_bench.(js|ts)` or anything in a `__bench__`.
+
+## Soon? Maybe?
+
+```
 benchpress compare # runs against the last commit
 benchpress compare <commit_hash> # runs against a specific hash
 benchpress compare master
 ```
-
-Benchpress looks for files with the name `*_bench.(js|ts)` or anything in a `__bench__`.
